@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Test from './components/Test.jsx';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+      <Routes>
+         <Route path="/" element={<Test />}></Route>
+         <Route path="/star" element={'thsi is Stared'}></Route>
+         <Route path="*" element={'This is 404 error : Page Not Found'}></Route>
+      </Routes>
+   );
 }
 
 export default App;
