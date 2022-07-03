@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 // import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
+import Shows from './pages/Shows.jsx';
 import Starred from './pages/Starred.jsx';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
          <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/star" element={<Starred />}></Route>
+            <Route path="/show/:id" element={<Shows />}></Route>
             <Route path="*" element={'404 : Not Found'}></Route>
          </Routes>
       </>
