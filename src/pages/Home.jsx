@@ -56,7 +56,7 @@ const Home = () => {
    const onRadioChange = event => {
       setSearchOption(event.target.value);
    };
-   console.log(searchOption);
+   // console.log(searchOption);
    return (
       <>
          <Title
