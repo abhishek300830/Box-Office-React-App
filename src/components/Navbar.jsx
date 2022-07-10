@@ -9,7 +9,7 @@ const Navbar = () => {
    ];
 
    const location = useLocation();
-   console.log('Location:', location);
+   // console.log('Location:', location);
    return (
       <div>
          <NavList>
