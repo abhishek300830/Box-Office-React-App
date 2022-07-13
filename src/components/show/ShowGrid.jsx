@@ -8,7 +8,7 @@ const ShowGrid = ({ data }) => {
    const [StarredShow, dispatchStarred] = useShows();
 
    const onStarClick = useCallback(
-      (isStarred, showId) => {
+      (showId, isStarred) => {
          if (isStarred) {
             dispatchStarred({ type: 'REMOVE', showId: showId });
          } else {
