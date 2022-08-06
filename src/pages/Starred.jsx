@@ -1,10 +1,15 @@
-import React from 'react';
+import * as React from 'react';
+// import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import MainPageLayout from '../components/MainPageLayout';
 import { useShows } from '../misc/custom-hooks';
 import { apiGet } from '../misc/config';
 import ShowGrid from '../components/show/ShowGrid';
+
+// loder
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const Starred = () => {
    const [starred] = useShows();
@@ -37,9 +42,21 @@ const Starred = () => {
 
    return (
       <MainPageLayout>
-         {isLoading && <div>Shows are Still Loading</div>}
+         {
+            <div>
+               {isLoading && (
+                  <Box sx={{ display: 'flex' }}>
+                     <CircularProgress />
+                  </Box>
+               )}
+            </div>
+         }
          {error && <div>Error Occured : {error}</div>}
-         {!isLoading && !shows && <div>No Shows are Starred</div>}
+         {!isLoading && !shows && (
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+               No Shows are Starred
+            </div>
+         )}
          {!isLoading && !error && shows && <ShowGrid data={shows} />}
       </MainPageLayout>
    );

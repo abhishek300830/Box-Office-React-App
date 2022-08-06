@@ -7,6 +7,9 @@ import ShowMainData from '../components/show/ShowMainData';
 import { useShow } from '../misc/custom-hooks';
 import { InfoBlock, ShowPageWrapper } from './Show.styled';
 
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+
 const Shows = () => {
    //    const params = useParams();
    const { id } = useParams();
@@ -15,7 +18,13 @@ const Shows = () => {
    // console.log('show', show);
 
    if (isLoading) {
-      return <div>The Data is Loading</div>;
+      return (
+         <div>
+            <Box sx={{ display: 'flex' }}>
+               <CircularProgress />
+            </Box>
+         </div>
+      );
    }
    if (error) {
       return <div>Error Occured : {error}</div>;
